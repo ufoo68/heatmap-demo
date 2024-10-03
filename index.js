@@ -19,12 +19,10 @@ document.addEventListener('click', function(event) {
   const screenY = screen.availHeight;
   const scrollY = window.scrollY;
   const scrollX = window.scrollX;
-  const timestamp = new Date().valueOf();
   console.log({
     userId,
     url,
     title,
-    timestamp,
     stayTime,
     positionX,
     positionY,
