@@ -47,7 +47,7 @@ document.addEventListener('click', function(event) {
 });
 
 let heatmapInstance = h337.create({
-  container: document.querySelector('body')
+  container: document.querySelector('#container')
 });
 
 
