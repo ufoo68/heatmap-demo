@@ -7,8 +7,10 @@ let intervalId = null;
 const dataPoints = [];
 
 setInterval(() => {
+  const stayTimeValue = document.querySelector('#stay-time-value');
   if (document.visibilityState === 'visible') {
     stayTime += 1;
+    stayTimeValue.textContent = stayTime;
   }
 }, 1000);
 
