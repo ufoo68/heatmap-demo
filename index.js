@@ -4,6 +4,8 @@ const title = document.title;
 let stayTime = 0;
 let intervalId = null;
 
+const dataPoints = [];
+
 setInterval(() => {
   if (document.visibilityState === 'visible') {
     stayTime += 1;
@@ -19,6 +21,15 @@ document.addEventListener('click', function(event) {
   const screenY = screen.availHeight;
   const scrollY = window.scrollY;
   const scrollX = window.scrollX;
+  dataPoints.push({
+    x: positionX,
+    y: positionY,
+    value: 1
+  });
+  heatmapInstance.setData({
+    max: 10,
+    data: dataPoints
+  });
   console.log({
     userId,
     url,
@@ -32,3 +43,16 @@ document.addEventListener('click', function(event) {
     scrollX
   });
 });
+
+let heatmapInstance = h337.create({
+  container: document.querySelector('body')
+});
+
+
+
+let heatmapData = {
+  max: 10,
+  data: dataPoints
+};
+
+heatmapInstance.setData(heatmapData);
